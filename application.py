@@ -25,10 +25,9 @@ db = scoped_session(sessionmaker(bind=engine))
 def index():
     return "Project 1: TODO"
 
-@app.route("/test-db")
-def test_db():
+@app.route("/testing-database")
+def testing_database():
     try:
-        # Attempt to execute a simple query
         db.execute(text('SELECT 1'))
         return "Database connection successful!"
     except Exception as e:
