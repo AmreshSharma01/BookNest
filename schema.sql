@@ -22,3 +22,5 @@ CREATE TABLE IF NOT EXISTS reviews (
     rating INTEGER CHECK (rating >= 1 AND rating <= 5),
     review TEXT
 );
+
+--ALTER TABLE reviews ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;

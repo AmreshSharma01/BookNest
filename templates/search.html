@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block title %}Search Books{% endblock %}
+{% block content %}
+  <h1 class="mb-4">Search Books</h1>
+  <form method="POST" class="row g-3 mb-4">
+    <div class="col-md-8">
+      <input type="text" name="query" class="form-control" placeholder="Search by ISBN, Title, or Author..."
+             value="{{ search_query or '' }}" required>
+    </div>
+    <div class="col-md-2">
+      <select name="search_type" class="form-select">
+        <option value="all">All Fields</option>
+        <option value="isbn">ISBN</option>
+        <option value="title">Title</option>
+        <option value="author">Author</option>
+      </select>
+    </div>
+    <div class="col-md-2">
+      <button type="submit" class="btn btn-primary w-100">Search</button>
+    </div>
+  </form>
+
+  {% if books %}
+    <div class="mb-3">
+      <p class="fw-bold">Found {{ books|length }} result(s) for "{{ search_query }}"</p>
+    </div>
+    <div>
+      {% for book in books %}
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">{{ book.title }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">By {{ book.author }} ({{ book.year }})</h6>
+            <p class="card-text">ISBN: {{ book.isbn }}</p>
+            <a href="{{ url_for('book', isbn=book.isbn) }}" class="btn btn-outline-primary">View Details</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% elif request.method == 'POST' %}
+    <div class="alert alert-warning">
+      No books found matching "{{ search_query }}"
+    </div>
+  {% endif %}
+{% endblock %}

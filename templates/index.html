@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<!-- Hero Section -->
+<div class="hero-section text-center text-white py-5">
+    <div class="container">
+        <h1 class="display-4">Hello, <span class="username-highlight">{{ username }}</span>! 👋</h1>
+        <p class="lead">Explore and review your favorite books with ease.</p>
+        <a href="{{ url_for('search') }}" class="btn btn-light btn-lg find-books-btn">📖 Find Books</a>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="container my-5">
+    <div class="row g-4">
+        <!-- Search Books -->
+        <div class="col-md-4">
+            <div class="card feature-card">
+                <div class="card-body text-center">
+                    <i class="bi bi-search feature-icon"></i>
+                    <h5 class="card-title">Search Books</h5>
+                    <p class="card-text">Find books by title, author, or ISBN.</p>
+                    <a href="{{ url_for('search') }}" class="btn btn-primary">Start Searching</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- My Reviews -->
+        <div class="col-md-4">
+            <div class="card feature-card">
+                <div class="card-body text-center">
+                    <i class="bi bi-star-fill feature-icon"></i>
+                    <h5 class="card-title">My Reviews</h5>
+                    <p class="card-text">Check out the books you've reviewed.</p>
+                    <a href="#" class="btn btn-success disabled">Coming Soon</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popular Books -->
+        <div class="col-md-4">
+            <div class="card feature-card">
+                <div class="card-body text-center">
+                    <i class="bi bi-book feature-icon"></i>
+                    <h5 class="card-title">Popular Books</h5>
+                    <p class="card-text">Browse trending books and top reviews.</p>
+                    <a href="#" class="btn btn-warning disabled">Coming Soon</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Logout Button -->
+<div class="text-center my-4">
+    <a href="{{ url_for('logout') }}" class="btn btn-danger btn-lg">Logout</a>
+</div>
+
+{% endblock %}

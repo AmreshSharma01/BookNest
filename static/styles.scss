@@ -1,0 +1,176 @@
+/* ============================
+   Custom SCSS Variables
+   ============================ */
+$primary-color: #8b55d3;
+$secondary-color: #6c757d;
+$success-color: #28a745;
+$danger-color: #dc3545;
+$warning-color: #ffc107;
+$light-color: #f8f9fa;
+$dark-color: #343a40;
+
+/* ============================
+      Base Styles
+      ============================ */
+body {
+  padding-top: 70px; // Ensures content is not hidden behind the fixed navbar
+}
+
+/* ============================
+      Navbar Styles
+      ============================ */
+.navbar {
+  font-weight: bold;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: $primary-color;
+}
+
+.navbar-nav .nav-link {
+  font-weight: bold;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: $primary-color;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* ============================
+      Hero Section Styles
+      ============================ */
+.hero-section {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  padding: 4rem 0;
+  color: white;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  margin: 2rem auto;
+  max-width: 90%;
+}
+
+.username-highlight {
+  font-weight: bold;
+  color: #ffc107;
+}
+
+/* Find Books Button */
+.find-books-btn {
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.find-books-btn:hover {
+  background-color: $light-color;
+  color: darken($primary-color, 15%);
+  transform: scale(1.05);
+}
+
+/* ============================
+      Feature Cards
+      ============================ */
+.feature-card {
+  border: none;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Feature Icons */
+.feature-icon {
+  font-size: 2rem;
+  color: $primary-color;
+  margin-bottom: 1rem;
+}
+
+/* ============================
+      Button Styles
+      ============================ */
+.btn {
+  transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
+/* ============================
+      Search Page Enhancements
+      ============================ */
+.search-form {
+  background: $light-color;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Book Cards */
+.book-card {
+  border: none;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================
+      Review Section
+      ============================ */
+.review-card {
+  background: $light-color;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Star Ratings */
+.review-rating {
+  color: gold;
+  font-size: 1.2rem;
+}
+
+/* ============================
+      Alerts and Messages
+      ============================ */
+.alert {
+  margin-top: 1rem;
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+.alert-success {
+  background: lighten($success-color, 40%);
+  color: darken($success-color, 30%);
+}
+
+.alert-danger {
+  background: lighten($danger-color, 40%);
+  color: darken($danger-color, 30%);
+}
+
+/* ============================
+      Footer (If Needed)
+      ============================ */
+.footer {
+  background: $dark-color;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+}
