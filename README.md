@@ -2,6 +2,17 @@
 
 ## ENGO 651
 
+## Overview
+This project is a simple web application for **books database**. Users can:
+- **Register** for an account
+- **Log in** and **log out** securely
+- **Search** for books by ISBN, title, or author
+- **View book details** and existing reviews
+- **Submit their own reviews** for books
+
+## Project Visual Walkthrough
+![Project Walkthrough](static/project_walkthrough.png)
+
 ## File Structure
 ```
 BookNest/
@@ -20,17 +31,6 @@ BookNest/
 │   ├── search.html  # Search books by author name, title, or ISBN
 │   └── book.html    # Book details page with review submission capability
 ```
-
-## Overview
-This project is a simple web application for **books database**. Users can:
-- **Register** for an account
-- **Log in** and **log out** securely
-- **Search** for books by ISBN, title, or author
-- **View book details** and existing reviews
-- **Submit their own reviews** for books
-
-## Project Visual Walkthrough
-![Project Walkthrough](static/project_walkthrough.png)
 
 ## Tech Stack
 - **Python 3** (Flask framework)
