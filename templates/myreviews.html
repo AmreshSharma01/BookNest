@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block title %}My Reviews{% endblock %}
+{% block content %}
+  <h1 class="mb-4">My Reviews</h1>
+  {% if reviews %}
+    <div class="list-group">
+      {% for review in reviews %}
+        <a href="{{ url_for('book', isbn=review.isbn) }}" class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">{{ review.title }}</h5>
+            <small>{{ review.created_at.strftime('%b %d, %Y') }}</small>
+          </div>
+          <p class="mb-1">
+            <strong>Rating:</strong>
+            {% for i in range(review.rating) %}
+              <span class="text-warning">★</span>
+            {% endfor %}
+          </p>
+          <p class="mb-1">{{ review.review }}</p>
+          <small class="text-muted">By {{ review.author }}</small>
+        </a>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="alert alert-info">You have not submitted any reviews yet.</div>
+  {% endif %}
+{% endblock %}

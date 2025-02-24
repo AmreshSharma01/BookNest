@@ -13,6 +13,41 @@
     </ul>
   </div>
 
+  <!-- Additional Information from Google Books and Gemini API -->
+  <div class="mb-4">
+    <h2>Additional Information from Google Book Api and Google Gemini Api</h2>
+    <ul class="list-unstyled">
+      {% if title %}
+         <li><strong>Title:</strong> {{ title }}</li>
+      {% endif %}
+      {% if author %}
+         <li><strong>Author:</strong> {{ author }}</li>
+      {% endif %}
+      {% if google_published_date %}
+         <li><strong>Published Date:</strong> {{ google_published_date }}</li>
+      {% endif %}
+      {% if isbn_10 %}
+         <li><strong>ISBN-10:</strong> {{ isbn_10 }}</li>
+      {% endif %}
+      {% if isbn_13 %}
+         <li><strong>ISBN-13:</strong> {{ isbn_13 }}</li>
+      {% endif %}
+      {% if google_average_rating %}
+          <li><strong>Average Rating (Google Books):</strong> {{ google_average_rating }}</li>
+      {% else %}
+        <li><strong>Average Rating (Google Books):</strong> Not Available</li>
+      {% endif %}
+      {% if google_ratings_count %}
+        <li><strong>Ratings Count (Google Books):</strong> {{ google_ratings_count }}</li>
+      {% else %}
+        <li><strong>Ratings Count (Google Books):</strong> Not Available</li>
+      {% endif %}
+      {% if summarized_description %}
+         <li><strong>Summarized Description:</strong> {{ summarized_description }}</li>
+      {% endif %}
+    </ul>
+  </div>
+
   <section class="mb-4">
     <h2>Reader Reviews</h2>
     {% if reviews %}

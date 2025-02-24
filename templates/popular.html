@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block title %}Popular Books{% endblock %}
+{% block content %}
+  <h1 class="mb-4">Popular Books</h1>
+  {% if books %}
+    <div class="row">
+      {% for book in books %}
+        <div class="col-md-4 mb-3">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">{{ book.title }}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">{{ book.author }} ({{ book.year }})</h6>
+              <p class="card-text">
+                <strong>Google Rating:</strong> {{ book.google_rating if book.google_rating is not none else "N/A" }}
+                {% if book.google_ratings_count %} ({{ book.google_ratings_count }} ratings){% endif %}
+              </p>
+              <a href="{{ url_for('book', isbn=book.isbn) }}" class="btn btn-outline-primary">View Details</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="alert alert-info">No popular books found.</div>
+  {% endif %}
+{% endblock %}
