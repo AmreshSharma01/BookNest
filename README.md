@@ -1,4 +1,4 @@
-# Project 1 - Book Database Web App
+# Project 1 and 2 - Book Database Web App
 
 ## ENGO 651
 
@@ -7,7 +7,7 @@ This project is a simple web application for **books database**. Users can:
 - **Register** for an account
 - **Log in** and **log out** securely
 - **Search** for books by ISBN, title, or author
-- **View book details** and existing reviews
+- **View book details and other additional details like average rating, rating counts,etc using google books api and summarize description using gemini api** and existing reviews
 - **Submit their own reviews** for books
 
 ## Project Visual Walkthrough
